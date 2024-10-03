@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de lista:</h1>
+        <input type="number" id="numero" placeholder="Digite um número" />
+        <button onclick="gerarLista()">Gerar Lista</button>
+
+        <div id="mensagem"></div>
+        <ul id="lista"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #f44336; 
+}
+
+#lista {
+    margin-top: 20px;
+    list-style-type: decimal;
+    padding-left: 0;
+}
+
+#lista li {
+    font-size: 1.1em;
+    padding: 5px 0;
+}
+
+
+
+function gerarLista() {
+    const numero = document.getElementById("numero").value; 
+    const mensagemElement = document.getElementById("mensagem");
+    const listaElement = document.getElementById("lista");
+
+    
+    mensagemElement.textContent = '';
+    listaElement.innerHTML = '';
+
+    if (!numero || isNaN(numero)) {
+        mensagemElement.textContent = "Por Favor, insira um número válido"; 
+    } else if (numero == 5) {
+       
+        for (let i = 1; i <= 5; i++) {
+            const li = document.createElement("li");  
+            li.textContent = `Item ${i}: Pedro Henrique da Silva Gomes`;  
+            listaElement.appendChild(li); 
+        }
+    }
+}
+
+
+
