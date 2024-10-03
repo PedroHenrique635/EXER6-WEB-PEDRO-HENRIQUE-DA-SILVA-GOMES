@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Container Principal -->
+  <div class="container">
+    <header>
+      <h1>Bem-vindo!</h1>
+    </header>
+
+      <input type="text" id="nameInput" placeholder="Seu nome aqui">
+      <button id="submitButton">Clique aqui</button>
+    </section>
+
+    <!-- Área de mensagem -->
+    <p id="mensagem"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
+
+
+Em CSS
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+input {
+    width: 80%;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#mensagem {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+Em Javascript
+
+function exibirMensagem() {
+    const nome = document.getElementById("nome").value.trim(); 
+    const mensagemElement = document.getElementById("mensagem"); 
+    
+
+    
+    if (nome) {
+      
+        mensagemElement.textContent = `Olá, ${nome}!`;
+        mensagemElement.style.color = "green";
+    } else {
+        
+        mensagemElement.textContent = "Por favor, insira seu nome.";
+        mensagemElement.style.color = "red";
+    }
+ }
+}
+
+
